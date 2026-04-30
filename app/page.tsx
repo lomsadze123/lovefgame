@@ -1,6 +1,7 @@
 import { HeroHeading, Logo } from "@/components";
 import { AppStoreButtons } from "@/components/footer/app-store-Buttons";
 import { SocialLinks } from "@/components/footer/social-links";
+import { SectionHeader } from "@/components/section-header";
 import AppleLogo from "@/public/icons/apple-logo.svg";
 import PlayStoreLogo from "@/public/icons/play-store.svg";
 
@@ -20,7 +21,13 @@ export default function Home() {
         title="PLay Store"
       /> */}
 
-      <SocialLinks />
+      {/* <SocialLinks /> */}
+
+      <SectionHeader
+        title="Our Mission"
+        className="text-center"
+        dividerClassName="mx-auto"
+      />
     </main>
   );
 }
