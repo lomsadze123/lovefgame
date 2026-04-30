@@ -1,12 +1,14 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
+import { runNoiseTransition } from "./run-noise-transition";
 
 const subscribe = () => () => {};
 
 export function ThemeSwitcher() {
   const { resolvedTheme, setTheme } = useTheme();
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const mounted = useSyncExternalStore(
     subscribe,
     () => true,
@@ -16,11 +18,31 @@ export function ThemeSwitcher() {
   const isDark = mounted && resolvedTheme === "dark";
   const next = isDark ? "light" : "dark";
 
+  const handleToggle = () => {
+    const button = buttonRef.current;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!button || prefersReducedMotion) {
+      setTheme(next);
+      return;
+    }
+
+    const rect = button.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const color: [number, number, number] = next === "dark" ? [0, 0, 0] : [1, 1, 1];
+
+    runNoiseTransition(x, y, color, () => setTheme(next));
+  };
+
   return (
     <button
+      ref={buttonRef}
       type="button"
       aria-label={`Switch to ${next} theme`}
-      onClick={() => setTheme(next)}
+      onClick={handleToggle}
       className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-foreground/20 bg-background text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
     >
       <span aria-hidden="true" suppressHydrationWarning>
