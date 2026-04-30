@@ -25,8 +25,9 @@ export default function Home() {
 
       <SectionHeader
         title="Our Mission"
-        className="text-center"
-        dividerClassName="mx-auto"
+        // subtitle="How we collect, use, and protect your information."
+        // date="Last updated: 21 April 2026"
+        className="[&_h3]:text-2xl [&>div]:bg-primary-text [&>div]:h-px gap-5"
       />
     </main>
   );
