@@ -4,12 +4,11 @@ interface SectionHeaderProps {
   title: string;
   subtitle?: string;
   date?: string;
-  fullDivider?: boolean;
   className?: string;
 }
 
 export function SectionHeader(props: SectionHeaderProps) {
-  const { title, subtitle, date, fullDivider, className } = props;
+  const { title, subtitle, date, className } = props;
 
   return (
     <div className={clsx("flex flex-col", className)}>
@@ -19,9 +18,7 @@ export function SectionHeader(props: SectionHeaderProps) {
 
       {date && <h5 className="text-base">{date}</h5>}
 
-      <div
-        className={clsx("bg-primary-text", fullDivider ? "w-full" : "w-1/2")}
-      ></div>
+      <div className="bg-primary-text w-full "></div>
     </div>
   );
 }
