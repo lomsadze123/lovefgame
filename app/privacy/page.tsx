@@ -1,8 +1,8 @@
-import { SectionHeader } from "@/components/section-header";
+import { SectionHeader } from "@/components";
 
 export default function PrivacyPage() {
   return (
-    <main className="">
+    <main>
       <SectionHeader
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."

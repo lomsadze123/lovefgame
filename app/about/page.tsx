@@ -1,4 +1,4 @@
-import { SectionHeader } from "@/components/section-header";
+import { SectionHeader } from "@/components";
 
 export default function AboutPage() {
   return (
