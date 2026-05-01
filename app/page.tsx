@@ -2,6 +2,7 @@ import { HeroHeading, Logo } from "@/components";
 import { AppStoreButtons } from "@/components/footer/app-store-Buttons";
 import { SocialLinks } from "@/components/footer/social-links";
 import { SectionHeader } from "@/components/section-header";
+import { SliderButton } from "@/components/slider-button";
 import AppleLogo from "@/public/icons/apple-logo.svg";
 import PlayStoreLogo from "@/public/icons/play-store.svg";
 
@@ -29,6 +30,8 @@ export default function Home() {
         // date="Last updated: 21 April 2026"
         className="[&_h3]:text-2xl [&>div]:bg-primary-text [&>div]:h-px gap-5"
       />
+
+      <SliderButton />
     </main>
   );
 }
