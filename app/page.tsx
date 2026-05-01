@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex-1">
       {/* <Logo /> */}
-      {/* <HeroHeading /> */}
+      <HeroHeading />
       {/* <AppStoreButtons
         logo={AppleLogo}
         text="Download on the"
@@ -24,14 +24,14 @@ export default function Home() {
 
       {/* <SocialLinks /> */}
 
-      <SectionHeader
+      {/* <SectionHeader
         title="Our Mission"
         // subtitle="How we collect, use, and protect your information."
         // date="Last updated: 21 April 2026"
         className="[&_h3]:text-2xl [&>div]:bg-primary-text [&>div]:h-px gap-5"
       />
 
-      <SliderButton />
+      <SliderButton /> */}
     </main>
   );
 }
