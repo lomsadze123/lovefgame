@@ -2,15 +2,15 @@ import { SectionHeader } from "@/components";
 
 export default function PrivacyPage() {
   return (
-    <main>
+    <main className="w-full lg:[&_p]:text-xl">
       <SectionHeader
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7"
+        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%]"
       />
 
-      <div className="px-7 mt-12 flex flex-col gap-10">
+      <div className="px-7 mt-12 mx-auto flex flex-col gap-10 max-w-340">
         <section className="flex flex-col gap-4 font-light">
           <p>
             This Privacy Policy tells you what you need to know about the
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
             provide.We also collect the following information:
           </p>
 
-          <ul className="list-disc marker:text-xs pl-5">
+          <ul className="list-disc marker:text-xs pl-5 lg:[&_li]:text-xl lg:space-y-1">
             <li>
               Age: when you download our game, we collect your age as indicated
               by you.
