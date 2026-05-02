@@ -27,7 +27,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col items-center font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
