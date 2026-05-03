@@ -30,8 +30,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col items-center justify-between font-sans">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
           <Header />
           {children}
