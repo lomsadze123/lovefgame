@@ -16,7 +16,7 @@ export default function Terms() {
             title="A quick summary"
             className="[&>div]:h-px gap-5 [&_h3]:text-2xl max-w-[83dvw] [&>div]:mx-auto font-medium md:max-w-full"
           />
-          <ul className="list-decimal mt-5 pl-5 flex flex-col gap-5 lg:[&_li]:text-xl">
+          <ul className="list-decimal mt-5 pl-5 flex flex-col gap-5 lg:[&_li]:text-xl lg:pl-12">
             <li>
               These are the legally binding terms of services (“TOS”) for
               LoveFrom Games, websites, forums and other related services
