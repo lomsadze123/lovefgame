@@ -22,7 +22,8 @@ export default function AboutPage() {
         <div>
           <SectionHeader
             title="Our Mission"
-            className="gap-5 [&_h3]:text-center [&_h3]:text-2xl lg:[&_h3]:text-left [&>div]:mx-auto [&>div]:h-px [&>div]:max-w-[70dvw] lg:[&>div]:mx-0 lg:[&>div]:max-w-1/2"
+            variant="centered"
+            className="[&_h3]:text-center lg:[&_h3]:text-left [&>div]:max-w-[70dvw] lg:[&>div]:mx-0 lg:[&>div]:max-w-1/2"
           />
           <p className="mt-5 font-light md:text-xl">
             At LoveFrom Games, our mission is to Make something beautiful,
@@ -38,7 +39,8 @@ export default function AboutPage() {
         <div>
           <SectionHeader
             title="Our Vision"
-            className="gap-5 [&_h3]:text-center [&_h3]:text-2xl lg:[&_h3]:text-right [&>div]:mx-auto [&>div]:h-px [&>div]:max-w-[70dvw] lg:[&>div]:mr-0 lg:[&>div]:ml-auto lg:[&>div]:max-w-1/2"
+            variant="centered"
+            className="[&_h3]:text-center lg:[&_h3]:text-right [&>div]:max-w-[70dvw] lg:[&>div]:mr-0 lg:[&>div]:ml-auto lg:[&>div]:max-w-1/2"
           />
           <p className="mt-5 font-light md:text-xl">
             To become a world where games are not just played - but felt. Where
