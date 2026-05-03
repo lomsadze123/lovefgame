@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,6 +35,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
