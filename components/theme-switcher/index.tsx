@@ -47,7 +47,7 @@ export function ThemeSwitcher() {
       type="button"
       aria-label={`Switch to ${next} theme`}
       onClick={handleToggle}
-      className="w-13 h-10 bg-foreground flex items-center justify-center rounded-3xl"
+      className="w-28.25 h-10 mb-12.5 bg-foreground flex items-center justify-center rounded-3xl fixed bottom-0 left-0 right-0 mx-auto sm:w-13"
     >
       <span aria-hidden="true" suppressHydrationWarning>
         {isDark ? (
