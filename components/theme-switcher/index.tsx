@@ -38,10 +38,8 @@ export function ThemeSwitcher() {
     const rect = button.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
-    const color: [number, number, number] =
-      next === "dark" ? [0, 0, 0] : [1, 1, 1];
 
-    runNoiseTransition(x, y, color, () => setTheme(next));
+    runNoiseTransition(x, y, () => setTheme(next));
   };
 
   return (
