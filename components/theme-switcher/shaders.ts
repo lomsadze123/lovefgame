@@ -129,6 +129,7 @@ uniform float u_inner_progress;
 uniform float u_aspect;
 uniform vec2 u_origin;
 uniform vec3 u_color;
+uniform float u_invert_alpha;
 varying vec2 vUv;
 
 ${CNOISE}
@@ -168,6 +169,7 @@ void main() {
   float alpha = max(core, outer) + speck;
   alpha = clamp(alpha, 0.0, 1.0);
 
-  gl_FragColor = vec4(u_color, alpha);
+  float outAlpha = mix(alpha, 1.0 - alpha, u_invert_alpha);
+  gl_FragColor = vec4(u_color, outAlpha);
 }
 `;
