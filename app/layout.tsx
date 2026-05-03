@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,14 +27,16 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col items-center font-sans">
+      <body className="min-h-full flex flex-col items-center justify-between font-sans">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

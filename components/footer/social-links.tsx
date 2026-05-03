@@ -28,6 +28,7 @@ export function SocialLinks() {
               width={28}
               height={28}
               aria-hidden
+              className="dark:invert lg:invert"
             />
           </a>
         </li>
