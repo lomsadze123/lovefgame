@@ -42,7 +42,7 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Introduction"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium"
+            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
           />
 
           <p>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Information we collect"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium"
+            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
           />
 
           <p>
