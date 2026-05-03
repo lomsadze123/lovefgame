@@ -49,7 +49,7 @@ export function ThemeSwitcher() {
       aria-label={`Switch to ${next} theme`}
       onClick={handleToggle}
       className={clsx(
-        "w-28.25 h-10 mb-12.5 bg-foreground flex items-center justify-center rounded-3xl fixed bottom-0 left-0 right-0 mx-auto sm:w-13",
+        "w-28.25 h-10 mb-12.5 bg-foreground flex items-center justify-center rounded-3xl fixed bottom-0 left-0 right-0 mx-auto lg:w-13 lg:top-0 lg:bottom-auto lg:left-auto lg:right-0 lg:mb-0 lg:mt-12 lg:mr-20  xl:mr-28 2xl:mt-18.5",
         "transition-transform duration-500 ease-out will-change-transform motion-reduce:transition-none",
         hidden
           ? "translate-y-[calc(100%+3.5rem)] sm:translate-y-0"
