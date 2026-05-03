@@ -1,7 +1,7 @@
 import AppleLogo from "@/public/icons/apple-logo.svg";
 import PlayStoreLogo from "@/public/icons/play-store.svg";
 import Link from "next/link";
-import { AppStoreButtons } from "./app-store-Buttons";
+import { AppStoreButtons } from "./app-store-buttons";
 import { SocialLinks } from "./social-links";
 
 export function Footer() {
@@ -36,11 +36,13 @@ export function Footer() {
             logo={AppleLogo}
             text="Download on the"
             title="App Store"
+            iconClassName="w-[1.365rem]"
           />
           <AppStoreButtons
             logo={PlayStoreLogo}
             text="Get it on"
             title="PLay Store"
+            iconClassName="w-[1.65rem]"
           />
         </div>
       </div>

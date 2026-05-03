@@ -7,14 +7,15 @@ export default function Terms() {
         title="Terms of Service"
         subtitle="By using our services, you agree to these terms."
         date="Last updated: 21 April 2026"
-        className="gap-[0.95rem] [&_h3]:text-5xl [&_h3]:font-bold [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6 [&>div]:h-[0.63rem]"
+        variant="page-title"
       />
 
       <div className="mx-auto mt-12 max-w-340 px-7 font-light">
         <section>
           <SectionHeader
             title="A quick summary"
-            className="max-w-[83dvw] gap-5 font-medium md:max-w-full [&_h3]:text-2xl [&>div]:mx-auto [&>div]:h-px"
+            variant="centered"
+            className="max-w-[83dvw] font-medium md:max-w-full"
           />
           <ul className="mt-5 flex list-decimal flex-col gap-5 pl-5 lg:pl-12 lg:[&_li]:text-xl">
             <li>
@@ -57,7 +58,8 @@ export default function Terms() {
         <section className="mt-12 lg:[&_p]:text-xl">
           <SectionHeader
             title="ABOUT THESE TOS"
-            className="max-w-[83dvw] gap-5 font-medium [&_h3]:text-2xl [&>div]:mx-auto [&>div]:h-px"
+            variant="centered"
+            className="max-w-[83dvw] font-medium"
           />
           <p className="mt-5">
             Agreeing to these TOS is a precondition for accessing and using our

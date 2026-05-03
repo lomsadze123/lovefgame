@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
         date="Last updated: 21 April 2026"
-        className="gap-[0.95rem] [&_h3]:text-5xl [&_h3]:font-bold [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6 [&>div]:h-[0.63rem]"
+        variant="page-title"
       />
 
       <div className="mx-auto mt-12 flex max-w-340 flex-col gap-10 px-7">
@@ -42,7 +42,8 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Introduction"
-            className="gap-5 font-medium [&_h3]:text-center [&_h3]:text-2xl md:[&_h3]:text-left [&>div]:mx-auto [&>div]:h-px [&>div]:max-w-[70dvw] md:[&>div]:max-w-full"
+            variant="centered"
+            className="font-medium [&_h3]:text-center md:[&_h3]:text-left [&>div]:max-w-[70dvw] md:[&>div]:max-w-full"
           />
 
           <p>
