@@ -2,10 +2,11 @@ import { AppStoreButtons } from "./app-store-Buttons";
 import AppleLogo from "@/public/icons/apple-logo.svg";
 import PlayStoreLogo from "@/public/icons/play-store.svg";
 import { SocialLinks } from "./social-links";
+import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mb-[2.9rem] mt-11 border-t-[0.625rem] lg:border-t-0 w-full flex flex-col items-center">
+    <footer className="pb-[2.9rem] mt-11 border-t-[0.625rem] lg:border-t-[#FFFFFF] w-full flex flex-col items-center lg:bg-black lg:text-white">
       <div className="mt-[2.89rem] px-2 flex flex-col gap-[1.88rem] border-b pb-[1.88rem] lg:flex-row lg:items-center lg:justify-between lg:gap-7 sm:w-[90%]">
         <div className="space-y-[1.88rem]">
           <p className="flex flex-col [&_span]:leading-none">
@@ -17,9 +18,15 @@ export function Footer() {
 
         <nav>
           <ul className="flex flex-col gap-5 lg:flex-row">
-            <li>About us</li>
-            <li>Privacy Policy</li>
-            <li>Terms of service</li>
+            <li>
+              <Link href="/about">About us</Link>
+            </li>
+            <li>
+              <Link href="/privacy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="/terms">Terms of service</Link>
+            </li>
             <li>Support</li>
           </ul>
         </nav>
