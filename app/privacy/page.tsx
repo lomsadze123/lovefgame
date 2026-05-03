@@ -2,12 +2,12 @@ import { SectionHeader } from "@/components";
 
 export default function PrivacyPage() {
   return (
-    <main className="w-full lg:[&_p]:text-xl">
+    <main className="w-full lg:[&_p]:text-xl mt-9 md:mt-15 lg:mb-15">
       <SectionHeader
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%]"
+        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
       />
 
       <div className="px-7 mt-12 mx-auto flex flex-col gap-10 max-w-340">
@@ -33,14 +33,16 @@ export default function PrivacyPage() {
           <p>
             If you have any questions about how we use your personal data or if
             you wish to exercise your rights, please get in touch:{" "}
-            <a href="#">privacy@lovefromgames.com</a>
+            <a className="underline" href="#">
+              privacy@lovefromgames.com
+            </a>
           </p>
         </section>
 
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Introduction"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium"
+            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
           />
 
           <p>
@@ -81,7 +83,7 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Information we collect"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium"
+            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
           />
 
           <p>

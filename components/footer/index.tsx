@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="pb-[2.9rem] mt-11 border-t-[0.625rem] lg:border-t-[#FFFFFF] w-full flex flex-col items-center lg:bg-black lg:text-white">
+    <footer className="pb-[2.9rem] mt-11 border-t-[0.625rem] lg:border-t-[#FFFFFF] w-full flex flex-col items-center lg:bg-black lg:text-white lg:mt-0 lg:pb-16.5">
       <div className="mt-[2.89rem] px-2 flex flex-col gap-[1.88rem] border-b pb-[1.88rem] lg:flex-row lg:items-center lg:justify-between lg:gap-7 sm:w-[90%]">
-        <div className="space-y-[1.88rem]">
-          <p className="flex flex-col [&_span]:leading-none">
+        <div>
+          <p className="flex flex-col [&_span]:leading-none mb-[1.88rem] lg:mb-10">
             <span className="font-semibold text-3xl">LoveFrom</span>
             <span className="font-light text-lg">Games</span>
           </p>
@@ -17,7 +17,7 @@ export function Footer() {
         </div>
 
         <nav>
-          <ul className="flex flex-col gap-5 lg:flex-row">
+          <ul className="flex flex-col gap-5 lg:flex-row xl:gap-18">
             <li>
               <Link href="/about">About us</Link>
             </li>

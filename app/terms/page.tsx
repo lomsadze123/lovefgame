@@ -2,21 +2,21 @@ import { SectionHeader } from "@/components";
 
 export default function Terms() {
   return (
-    <main className="w-full">
+    <main className="w-full mt-9 md:mt-15 lg:mb-15">
       <SectionHeader
         title="Terms of Service"
         subtitle="By using our services, you agree to these terms."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%]"
+        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
       />
 
       <div className="px-7 mt-12 mx-auto max-w-340 font-light">
         <section>
           <SectionHeader
             title="A quick summary"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl max-w-[83dvw] [&>div]:mx-auto font-medium"
+            className="[&>div]:h-px gap-5 [&_h3]:text-2xl max-w-[83dvw] [&>div]:mx-auto font-medium md:max-w-full"
           />
-          <ul className="list-decimal mt-5 pl-5 flex flex-col gap-5 lg:[&_li]:text-xl">
+          <ul className="list-decimal mt-5 pl-5 flex flex-col gap-5 lg:[&_li]:text-xl lg:pl-12">
             <li>
               These are the legally binding terms of services (“TOS”) for
               LoveFrom Games, websites, forums and other related services
@@ -38,9 +38,12 @@ export default function Terms() {
             </li>
             <li>
               Use of the Services is also governed by our Privacy Policy
-              available at https://lovefromgames.com/privacy/ (which explains
-              what personal information we may collect and how we use and
-              protect it).
+              available at{" "}
+              <a href="https://lovefromgames.com/privacy/">
+                https://lovefromgames.com/privacy/
+              </a>{" "}
+              (which explains what personal information we may collect and how
+              we use and protect it).
             </li>
           </ul>
           <p className="my-10 lg:text-xl">
@@ -93,7 +96,7 @@ export default function Terms() {
               Services or to reflect applicable laws. If we do, we will make the
               changed/updated TOS available online and make reasonable efforts
               to notify you of it. You are welcome to contact us at{" "}
-              <a href="mailto:support@lovefromgames.com">
+              <a className="underline" href="mailto:support@lovefromgames.com">
                 support@lovefromgames.com
               </a>{" "}
               if you have specific questions about the changes. If you do not
@@ -106,7 +109,10 @@ export default function Terms() {
             <li>
               1.4 Are there any other important documents you should read?
               Please also read our LoveFrom Games Privacy Policy available at{" "}
-              <a href="https://lovefromgames.com/privacy/1.1">
+              <a
+                className="underline"
+                href="https://lovefromgames.com/privacy/1.1"
+              >
                 https://lovefromgames.com/privacy/1.1
               </a>{" "}
               What do these TOS apply to? ? These TOS apply to our Services,
@@ -129,7 +135,7 @@ export default function Terms() {
               Services or to reflect applicable laws. If we do, we will make the
               changed/updated TOS available online and make reasonable efforts
               to notify you of it. You are welcome to contact us at{" "}
-              <a href="mailto:support@lovefromgames.com">
+              <a className="underline" href="mailto:support@lovefromgames.com">
                 support@lovefromgames.com
               </a>{" "}
               if you have specific questions about the changes. If you do not

@@ -17,8 +17,10 @@ export function AppStoreButtons(props: AppStoreButtonsProps) {
         alt="Product logo"
       />
       <div className="font-medium">
-        <p className="text-[0.659rem]">{text}</p>
-        <p className="text-[1.395rem] leading-none">{title}</p>
+        <p className="text-[0.659rem] tracking-[-0.07em]">{text}</p>
+        <p className="text-[1.395rem] leading-none tracking-[-0.07em]">
+          {title}
+        </p>
       </div>
     </div>
   );
