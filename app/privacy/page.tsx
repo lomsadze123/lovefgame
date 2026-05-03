@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components";
 
 export default function PrivacyPage() {
   return (
-    <main className="w-full lg:[&_p]:text-xl">
+    <main className="w-full lg:[&_p]:text-xl mt-9 md:mt-15">
       <SectionHeader
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."

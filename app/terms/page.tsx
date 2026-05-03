@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components";
 
 export default function Terms() {
   return (
-    <main className="w-full">
+    <main className="w-full mt-9 md:mt-15">
       <SectionHeader
         title="Terms of Service"
         subtitle="By using our services, you agree to these terms."
