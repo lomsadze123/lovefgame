@@ -10,7 +10,7 @@ interface AppStoreButtonsProps {
 export function AppStoreButtons(props: AppStoreButtonsProps) {
   const { logo, text, title } = props;
   return (
-    <div className="flex items-center gap-2 bg-white text-[#000000] rounded-lg px-2 py-1.5 border">
+    <div className="flex items-center gap-2 rounded-lg border bg-white px-2 py-1.5 text-[#000000]">
       <Image
         className={clsx(title === "App Store" ? "w-[1.365rem]" : "w-[1.65rem]")}
         src={logo}

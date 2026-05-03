@@ -2,21 +2,21 @@ import { SectionHeader } from "@/components";
 
 export default function Terms() {
   return (
-    <main className="w-full mt-9 md:mt-15 lg:mb-15">
+    <main className="mt-9 w-full md:mt-15 lg:mb-15">
       <SectionHeader
         title="Terms of Service"
         subtitle="By using our services, you agree to these terms."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
+        className="gap-[0.95rem] [&_h3]:text-5xl [&_h3]:font-bold [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6 [&>div]:h-[0.63rem]"
       />
 
-      <div className="px-7 mt-12 mx-auto max-w-340 font-light">
+      <div className="mx-auto mt-12 max-w-340 px-7 font-light">
         <section>
           <SectionHeader
             title="A quick summary"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl max-w-[83dvw] [&>div]:mx-auto font-medium md:max-w-full"
+            className="max-w-[83dvw] gap-5 font-medium md:max-w-full [&_h3]:text-2xl [&>div]:mx-auto [&>div]:h-px"
           />
-          <ul className="list-decimal mt-5 pl-5 flex flex-col gap-5 lg:[&_li]:text-xl lg:pl-12">
+          <ul className="mt-5 flex list-decimal flex-col gap-5 pl-5 lg:pl-12 lg:[&_li]:text-xl">
             <li>
               These are the legally binding terms of services (“TOS”) for
               LoveFrom Games, websites, forums and other related services
@@ -57,7 +57,7 @@ export default function Terms() {
         <section className="mt-12 lg:[&_p]:text-xl">
           <SectionHeader
             title="ABOUT THESE TOS"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl max-w-[83dvw] [&>div]:mx-auto font-medium"
+            className="max-w-[83dvw] gap-5 font-medium [&_h3]:text-2xl [&>div]:mx-auto [&>div]:h-px"
           />
           <p className="mt-5">
             Agreeing to these TOS is a precondition for accessing and using our
@@ -74,7 +74,7 @@ export default function Terms() {
             otherwise. You agree to be bound by the updated TOS, by your
             continued access and/or use of the Services after said updates.
           </p>
-          <ul className="flex flex-col gap-1 list-disc marker:text-xs pl-5 lg:[&_li]:text-xl lg:gap-2">
+          <ul className="flex list-disc flex-col gap-1 pl-5 marker:text-xs lg:gap-2 lg:[&_li]:text-xl">
             <li>
               1.1 What do these TOS apply to? ? These TOS apply to our Services,
               including (but not limited to) any interactive entertainment

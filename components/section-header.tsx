@@ -18,7 +18,7 @@ export function SectionHeader(props: SectionHeaderProps) {
 
       {date && <h5 className="text-base">{date}</h5>}
 
-      <div className="bg-primary-text w-full "></div>
+      <div className="w-full bg-primary-text"></div>
     </div>
   );
 }

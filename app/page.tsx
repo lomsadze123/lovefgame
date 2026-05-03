@@ -1,5 +1,4 @@
-import { HeroHeading, Logo } from "@/components";
-import { SliderButton } from "@/components/slider-button";
+import { HeroHeading } from "@/components";
 
 export default function Home() {
   return (

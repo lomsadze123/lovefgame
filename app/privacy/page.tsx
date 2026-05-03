@@ -2,15 +2,15 @@ import { SectionHeader } from "@/components";
 
 export default function PrivacyPage() {
   return (
-    <main className="w-full lg:[&_p]:text-xl mt-9 md:mt-15 lg:mb-15">
+    <main className="mt-9 w-full md:mt-15 lg:mb-15 lg:[&_p]:text-xl">
       <SectionHeader
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
+        className="gap-[0.95rem] [&_h3]:text-5xl [&_h3]:font-bold [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6 [&>div]:h-[0.63rem]"
       />
 
-      <div className="px-7 mt-12 mx-auto flex flex-col gap-10 max-w-340">
+      <div className="mx-auto mt-12 flex max-w-340 flex-col gap-10 px-7">
         <section className="flex flex-col gap-4 font-light">
           <p>
             This Privacy Policy tells you what you need to know about the
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Introduction"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
+            className="gap-5 font-medium [&_h3]:text-center [&_h3]:text-2xl md:[&_h3]:text-left [&>div]:mx-auto [&>div]:h-px [&>div]:max-w-[70dvw] md:[&>div]:max-w-full"
           />
 
           <p>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         <section className="flex flex-col gap-4 font-light">
           <SectionHeader
             title="Information we collect"
-            className="[&>div]:h-px gap-5 [&_h3]:text-2xl [&>div]:max-w-[70dvw] [&>div]:mx-auto [&_h3]:text-center font-medium md:[&>div]:max-w-full md:[&_h3]:text-left"
+            className="gap-5 font-medium [&_h3]:text-center [&_h3]:text-2xl md:[&_h3]:text-left [&>div]:mx-auto [&>div]:h-px [&>div]:max-w-[70dvw] md:[&>div]:max-w-full"
           />
 
           <p>
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
             provide.We also collect the following information:
           </p>
 
-          <ul className="list-disc marker:text-xs pl-5 lg:[&_li]:text-xl lg:space-y-1">
+          <ul className="list-disc pl-5 marker:text-xs lg:space-y-1 lg:[&_li]:text-xl">
             <li>
               Age: when you download our game, we collect your age as indicated
               by you.

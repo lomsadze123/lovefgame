@@ -1,17 +1,17 @@
-import { AppStoreButtons } from "./app-store-Buttons";
 import AppleLogo from "@/public/icons/apple-logo.svg";
 import PlayStoreLogo from "@/public/icons/play-store.svg";
-import { SocialLinks } from "./social-links";
 import Link from "next/link";
+import { AppStoreButtons } from "./app-store-Buttons";
+import { SocialLinks } from "./social-links";
 
 export function Footer() {
   return (
-    <footer className="pb-[2.9rem] mt-11 border-t-[0.625rem] lg:border-t-[#FFFFFF] w-full flex flex-col items-center lg:bg-black lg:text-white lg:mt-0 lg:pb-16.5">
-      <div className="mt-[2.89rem] px-2 flex flex-col gap-[1.88rem] border-b pb-[1.88rem] lg:flex-row lg:items-center lg:justify-between lg:gap-7 sm:w-[90%]">
+    <footer className="mt-11 flex w-full flex-col items-center border-t-[0.625rem] pb-[2.9rem] lg:mt-0 lg:border-t-[#FFFFFF] lg:bg-black lg:pb-16.5 lg:text-white">
+      <div className="mt-[2.89rem] flex flex-col gap-[1.88rem] border-b px-2 pb-[1.88rem] sm:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-7">
         <div>
-          <p className="flex flex-col [&_span]:leading-none mb-[1.88rem] lg:mb-10">
-            <span className="font-semibold text-3xl">LoveFrom</span>
-            <span className="font-light text-lg">Games</span>
+          <p className="mb-[1.88rem] flex flex-col lg:mb-10 [&_span]:leading-none">
+            <span className="text-3xl font-semibold">LoveFrom</span>
+            <span className="text-lg font-light">Games</span>
           </p>
           <a href="mailto:support@lfg.com">support@lfg.com</a>
         </div>
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-[1.88rem] mt-[1.88rem] sm:flex-row sm:w-[90%] sm:justify-between">
+      <div className="mt-[1.88rem] flex flex-col items-center gap-[1.88rem] sm:w-[90%] sm:flex-row sm:justify-between">
         <SocialLinks />
 
         <small className="text-base">&copy; Copyright 2026</small>

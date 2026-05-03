@@ -1,13 +1,13 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useRef, useSyncExternalStore } from "react";
-import Image from "next/image";
-import clsx from "clsx";
-import { runNoiseTransition } from "./run-noise-transition";
 import { useHideOnScrollDown } from "@/hooks/use-hide-on-scroll-down";
-import Sun from "@/public/icons/sun.svg";
 import Moon from "@/public/icons/moon.svg";
+import Sun from "@/public/icons/sun.svg";
+import clsx from "clsx";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useRef, useSyncExternalStore } from "react";
+import { runNoiseTransition } from "./run-noise-transition";
 
 const subscribe = () => () => {};
 
@@ -49,7 +49,7 @@ export function ThemeSwitcher() {
       aria-label={`Switch to ${next} theme`}
       onClick={handleToggle}
       className={clsx(
-        "w-28.25 h-10 mb-12.5 bg-foreground flex items-center justify-center rounded-3xl fixed bottom-0 left-0 right-0 mx-auto lg:w-13 lg:top-0 lg:bottom-auto lg:left-auto lg:right-0 lg:mb-0 lg:mt-12 lg:mr-20  xl:mr-28 2xl:mt-18.5",
+        "fixed right-0 bottom-0 left-0 mx-auto mb-12.5 flex h-10 w-28.25 items-center justify-center rounded-3xl bg-foreground lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:mt-12 lg:mr-20 lg:mb-0 lg:w-13 xl:mr-28 2xl:mt-18.5",
         "transition-transform duration-500 ease-out will-change-transform motion-reduce:transition-none",
         hidden
           ? "translate-y-[calc(100%+3.5rem)] sm:translate-y-0"
