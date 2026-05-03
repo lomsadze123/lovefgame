@@ -7,7 +7,7 @@ export default function Terms() {
         title="Terms of Service"
         subtitle="By using our services, you agree to these terms."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%]"
+        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
       />
 
       <div className="px-7 mt-12 mx-auto max-w-340 font-light">

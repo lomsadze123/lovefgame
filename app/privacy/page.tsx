@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your information."
         date="Last updated: 21 April 2026"
-        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%]"
+        className="[&_h3]:text-5xl [&_h3]:font-bold gap-[0.95rem] [&>div]:h-[0.63rem] [&>*:not(:last-child)]:px-7 2xl:[&>*:not(:last-child)]:pl-[8%] [&>div]:mt-6"
       />
 
       <div className="px-7 mt-12 mx-auto flex flex-col gap-10 max-w-340">
@@ -33,7 +33,9 @@ export default function PrivacyPage() {
           <p>
             If you have any questions about how we use your personal data or if
             you wish to exercise your rights, please get in touch:{" "}
-            <a href="#">privacy@lovefromgames.com</a>
+            <a className="underline" href="#">
+              privacy@lovefromgames.com
+            </a>
           </p>
         </section>
 

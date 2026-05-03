@@ -5,7 +5,7 @@ export default function AboutPage() {
     <main className="px-7 mt-9 md:mt-15 max-w-330">
       <section className="text-center">
         <h1 className="text-[2rem] font-bold">ABOUT US</h1>
-        <p className="my-[1.9rem] md:text-xl font-light">
+        <p className="my-[1.9rem] md:text-xl font-light lg:my-8.5">
           LoveFrom Games is a video game studio, dedicated to crafting immersive
           gaming experiences. We are passionate about pushing the boundaries of
           creativity and technology to deliver unforgettable adventures to
@@ -18,7 +18,7 @@ export default function AboutPage() {
         </button>
       </section>
 
-      <section className="flex flex-col gap-[3.1rem] mt-14 lg:flex-row">
+      <section className="flex flex-col gap-[3.1rem] mt-14 lg:flex-row lg:gap-26.5 lg:mt-18">
         <div>
           <SectionHeader
             title="Our Mission"
