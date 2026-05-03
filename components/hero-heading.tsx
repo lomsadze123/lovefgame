@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   type MotionValue,
 } from "motion/react";
+import { useRef } from "react";
 
 const TEXT = "Dream it, Build it";
 const MIRROR_TEXT = "Dream it Build it";
