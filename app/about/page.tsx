@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components";
+import { SliderButton } from "@/components/slider-button";
 
 export default function AboutPage() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPage() {
           storytellers, we strive to create games that resonate deeply with
           audiences and leave a lasting impression.
         </p>
-        <button className="rounded-lg bg-foreground px-[1.64rem] py-2 text-button-text">
+        <button className="cursor-pointer rounded-lg bg-foreground px-[1.64rem] py-2 text-button-text">
           Get in Touch
         </button>
       </section>
@@ -52,6 +53,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+      <SliderButton />
     </main>
   );
 }

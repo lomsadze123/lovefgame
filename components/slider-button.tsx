@@ -1,10 +1,13 @@
-import SliderArrow from "@/public/icons/slider-arrow.svg";
+import SliderArrow from "@/public/icons/arrow.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 export function SliderButton() {
   return (
-    <button className="h-14 w-14">
-      <Image src={SliderArrow} alt="Slider Arrow" />
+    <button className="absolute top-1/3 left-0 ml-11 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2">
+      <Link className="p-4.5 pr-5" href="/">
+        <Image src={SliderArrow} alt="Slider Arrow" />
+      </Link>
     </button>
   );
 }
