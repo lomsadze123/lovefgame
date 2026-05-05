@@ -131,7 +131,7 @@ export default function PrivacyPage() {
           </ul>
         </section>
       </div>
-      <SliderButton />
-    </main>
+        <SliderButton />
+      </main>
   );
 }

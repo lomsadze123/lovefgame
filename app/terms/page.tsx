@@ -151,7 +151,7 @@ export default function Terms() {
           </ul>
         </section>
       </div>
-      <SliderButton />
-    </main>
+        <SliderButton />
+      </main>
   );
 }
