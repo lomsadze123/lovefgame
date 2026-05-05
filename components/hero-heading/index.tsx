@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   BOLD_D,
@@ -59,6 +59,7 @@ const MIRROR_CONFIGS = [
 
 export function HeroHeading() {
   const ref = useRef<HTMLDivElement>(null);
+  const [scrollPercent, setScrollPercent] = useState(0);
   const scrollPercentRef = useRef(0);
 
   const progressMV = useMotionValue(0);
@@ -67,6 +68,10 @@ export function HeroHeading() {
     damping: 22,
     mass: 0.4,
   });
+
+  useEffect(() => {
+    progressMV.set(scrollPercent / 100);
+  }, [scrollPercent, progressMV]);
 
   useEffect(() => {
     const el = ref.current;
@@ -95,7 +100,7 @@ export function HeroHeading() {
         Math.min(100, prev + e.deltaY * WHEEL_SENSITIVITY),
       );
       scrollPercentRef.current = next;
-      progressMV.set(next / 100);
+      setScrollPercent(next);
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
@@ -103,7 +108,7 @@ export function HeroHeading() {
       observer.disconnect();
       window.removeEventListener("wheel", onWheel);
     };
-  }, [progressMV]);
+  }, []);
 
   const yTopMain = useTransform(
     progress,
@@ -181,10 +186,7 @@ export function HeroHeading() {
                 />
                 <path d={cfg.fillD} />
               </mask>
-              <path
-                d={cfg.fillD}
-                style={{ fill: "var(--background)" }}
-              />
+              <path d={cfg.fillD} style={{ fill: "var(--background)" }} />
               <path
                 d={cfg.strokeD}
                 fill={`url(#${cfg.gradientId})`}
