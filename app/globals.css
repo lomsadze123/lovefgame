@@ -7,6 +7,7 @@
   --foreground: #000000;
   --primary-text: #000000;
   --button-text: #ffffff;
+  --hero-mirror-edge: #787878;
 }
 
 .dark {
@@ -14,6 +15,7 @@
   --foreground: #ffffff;
   --primary-text: #ffffff;
   --button-text: #000000;
+  --hero-mirror-edge: #ffffff;
 }
 
 @theme inline {
@@ -21,6 +23,7 @@
   --color-foreground: var(--foreground);
   --color-primary-text: var(--primary-text);
   --color-button-text: var(--button-text);
+  --color-hero-mirror-edge: var(--hero-mirror-edge);
   --font-sans: var(--font-poppins);
 }
 

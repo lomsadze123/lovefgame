@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import {
   BOLD_D,
@@ -59,7 +59,6 @@ const MIRROR_CONFIGS = [
 
 export function HeroHeading() {
   const ref = useRef<HTMLDivElement>(null);
-  const [scrollPercent, setScrollPercent] = useState(0);
   const scrollPercentRef = useRef(0);
 
   const progressMV = useMotionValue(0);
@@ -68,10 +67,6 @@ export function HeroHeading() {
     damping: 22,
     mass: 0.4,
   });
-
-  useEffect(() => {
-    progressMV.set(scrollPercent / 100);
-  }, [scrollPercent, progressMV]);
 
   useEffect(() => {
     const el = ref.current;
@@ -100,7 +95,7 @@ export function HeroHeading() {
         Math.min(100, prev + e.deltaY * WHEEL_SENSITIVITY),
       );
       scrollPercentRef.current = next;
-      setScrollPercent(next);
+      progressMV.set(next / 100);
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
@@ -108,7 +103,7 @@ export function HeroHeading() {
       observer.disconnect();
       window.removeEventListener("wheel", onWheel);
     };
-  }, []);
+  }, [progressMV]);
 
   const yTopMain = useTransform(
     progress,
@@ -149,18 +144,6 @@ export function HeroHeading() {
       ref={ref}
       className="relative scale-25 sm:scale-50 lg:scale-75 xl:scale-100"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-4 right-4 bottom-4 w-1 rounded-full bg-white/10"
-      >
-        <div
-          className="absolute left-1/2 h-12 w-2 rounded-full bg-white/70"
-          style={{
-            top: `${scrollPercent}%`,
-            transform: `translate(-50%, -${scrollPercent}%)`,
-          }}
-        />
-      </div>
       <svg
         width="1344"
         height="768"
@@ -198,7 +181,10 @@ export function HeroHeading() {
                 />
                 <path d={cfg.fillD} />
               </mask>
-              <path d={cfg.fillD} fill="white" />
+              <path
+                d={cfg.fillD}
+                style={{ fill: "var(--background)" }}
+              />
               <path
                 d={cfg.strokeD}
                 fill={`url(#${cfg.gradientId})`}
@@ -206,7 +192,11 @@ export function HeroHeading() {
               />
             </motion.g>
           ))}
-          <path d={BOLD_D} fill="black" transform="translate(0 13)" />
+          <path
+            d={BOLD_D}
+            style={{ fill: "var(--foreground)" }}
+            transform="translate(0 13)"
+          />
         </g>
         <defs>
           <linearGradient
@@ -217,8 +207,8 @@ export function HeroHeading() {
             y2="317.636"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#787878" />
-            <stop offset="1" stopColor="white" />
+            <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
+            <stop offset="1" style={{ stopColor: "var(--background)" }} />
           </linearGradient>
           <linearGradient
             id="paint1_linear_2001_1227"
@@ -228,8 +218,10 @@ export function HeroHeading() {
             y2="352.918"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#787878" stopOpacity="0.7" />
-            <stop offset="1" stopColor="white" />
+            <stop
+              style={{ stopColor: "var(--hero-mirror-edge)", stopOpacity: 0.7 }}
+            />
+            <stop offset="1" style={{ stopColor: "var(--background)" }} />
           </linearGradient>
           <linearGradient
             id="paint2_linear_2001_1227"
@@ -239,8 +231,8 @@ export function HeroHeading() {
             y2="475.681"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#787878" />
-            <stop offset="1" stopColor="white" />
+            <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
+            <stop offset="1" style={{ stopColor: "var(--background)" }} />
           </linearGradient>
           <linearGradient
             id="paint3_linear_2001_1227"
@@ -250,8 +242,10 @@ export function HeroHeading() {
             y2="405.87"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#787878" stopOpacity="0.7" />
-            <stop offset="1" stopColor="white" />
+            <stop
+              style={{ stopColor: "var(--hero-mirror-edge)", stopOpacity: 0.7 }}
+            />
+            <stop offset="1" style={{ stopColor: "var(--background)" }} />
           </linearGradient>
           <clipPath id="clip0_2001_1227">
             <rect width="1344" height="768" fill="white" />
