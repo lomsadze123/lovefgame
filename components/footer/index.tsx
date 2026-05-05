@@ -4,6 +4,9 @@ import Link from "next/link";
 import { AppStoreButtons } from "./app-store-buttons";
 import { SocialLinks } from "./social-links";
 
+const hoverUnderline =
+  "xl:relative xl:after:absolute xl:after:bottom-0 xl:after:left-0 xl:after:h-px xl:after:w-0 xl:after:bg-current xl:after:transition-[width] xl:after:duration-500 xl:hover:after:w-full";
+
 export function Footer() {
   return (
     <footer className="mt-11 flex w-full flex-col items-center border-t-[0.625rem] pb-[2.9rem] lg:mt-0 lg:border-t-[#FFFFFF] lg:bg-black lg:pb-16.5 lg:text-white">
@@ -18,16 +21,16 @@ export function Footer() {
 
         <nav>
           <ul className="flex flex-col gap-5 lg:flex-row xl:gap-18">
-            <li>
+            <li className={hoverUnderline}>
               <Link href="/about">About us</Link>
             </li>
-            <li>
+            <li className={hoverUnderline}>
               <Link href="/privacy">Privacy Policy</Link>
             </li>
-            <li>
+            <li className={hoverUnderline}>
               <Link href="/terms">Terms of service</Link>
             </li>
-            <li>Support</li>
+            <li className={hoverUnderline}>Support</li>
           </ul>
         </nav>
 
@@ -37,12 +40,14 @@ export function Footer() {
             text="Download on the"
             title="App Store"
             iconClassName="w-[1.365rem]"
+            href="#"
           />
           <AppStoreButtons
             logo={PlayStoreLogo}
             text="Get it on"
             title="PLay Store"
             iconClassName="w-[1.65rem]"
+            href="#"
           />
         </div>
       </div>

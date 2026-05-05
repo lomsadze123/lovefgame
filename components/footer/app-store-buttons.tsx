@@ -1,16 +1,21 @@
 import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface AppStoreButtonsProps {
   logo: StaticImageData;
   text: string;
   title: string;
+  href: string;
   iconClassName?: string;
 }
 
 export function AppStoreButtons(props: AppStoreButtonsProps) {
-  const { logo, text, title, iconClassName } = props;
+  const { logo, text, title, iconClassName, href } = props;
   return (
-    <div className="flex items-center gap-2 rounded-lg border bg-white px-2 py-1.5 text-black">
+    <Link
+      href={href}
+      className="flex cursor-pointer items-center gap-2 rounded-lg border bg-white px-2 py-1.5 text-black"
+    >
       <Image className={iconClassName} src={logo} alt="Product logo" />
       <div className="font-medium">
         <p className="text-[0.659rem] tracking-[-0.07em]">{text}</p>
@@ -18,6 +23,6 @@ export function AppStoreButtons(props: AppStoreButtonsProps) {
           {title}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

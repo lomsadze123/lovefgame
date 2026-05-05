@@ -14,7 +14,7 @@ export default function AboutPage() {
           storytellers, we strive to create games that resonate deeply with
           audiences and leave a lasting impression.
         </p>
-        <button className="cursor-pointer rounded-lg bg-foreground px-[1.64rem] py-2 text-button-text">
+        <button className="cursor-pointer rounded-lg bg-foreground px-[1.64rem] py-2 text-button-text transition-all duration-300 ease-out active:scale-95 xl:hover:-translate-y-0.5 xl:hover:shadow-lg xl:hover:brightness-110">
           Get in Touch
         </button>
       </section>
@@ -53,7 +53,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-        <SliderButton />
-      </main>
+      <SliderButton />
+    </main>
   );
 }
