@@ -2,7 +2,7 @@ import { ThemeSwitcher } from ".";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-end">
+    <header className="z-2 flex items-center justify-end">
       <ThemeSwitcher />
     </header>
   );

@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components";
+import { Footer, Header, PageTransition } from "@/components";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
@@ -35,7 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <PageTransition>{children}</PageTransition>
           <Footer />
         </ThemeProvider>
       </body>

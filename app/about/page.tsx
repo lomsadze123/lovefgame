@@ -53,7 +53,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      <SliderButton />
-    </main>
+        <SliderButton />
+      </main>
   );
 }
