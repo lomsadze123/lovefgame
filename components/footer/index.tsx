@@ -12,11 +12,16 @@ export function Footer() {
     <footer className="mt-11 flex w-full flex-col items-center border-t-[0.625rem] pb-[2.9rem] lg:mt-0 lg:border-t-[#FFFFFF] lg:bg-black lg:pb-16.5 lg:text-white">
       <div className="mt-[2.89rem] flex flex-col gap-[1.88rem] border-b px-2 pb-[1.88rem] sm:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-7">
         <div>
-          <p className="mb-[1.88rem] flex flex-col lg:mb-10 [&_span]:leading-none">
+          <Link
+            href="/"
+            className="flex flex-col lg:mb-10 [&_span]:leading-none"
+          >
             <span className="text-3xl font-semibold">LoveFrom</span>
             <span className="text-lg font-light">Games</span>
-          </p>
-          <a href="mailto:support@lfg.com">support@lfg.com</a>
+          </Link>
+          <a className="hidden lg:inline" href="mailto:support@lfg.com">
+            support@lfg.com
+          </a>
         </div>
 
         <nav>

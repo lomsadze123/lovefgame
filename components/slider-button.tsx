@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function SliderButton() {
   return (
-    <button className="group absolute top-1/3 left-0 ml-11 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 transition-colors duration-500 ease-in-out xl:flex xl:hover:bg-foreground">
+    <button className="group absolute top-0 bottom-0 left-0 my-auto ml-11 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 transition-colors duration-500 ease-in-out xl:flex xl:hover:bg-foreground">
       <Link className="p-4.5 pr-5" href="/">
         <Image
           src={SliderArrow}
