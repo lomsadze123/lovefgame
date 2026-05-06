@@ -1,4 +1,5 @@
 import { Footer, Header, PageTransition } from "@/components";
+import { SliderButton } from "@/components/slider-button";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
@@ -34,6 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SliderButton />
           <Header />
           <PageTransition>{children}</PageTransition>
           <Footer />

@@ -1,5 +1,4 @@
 import { SectionHeader } from "@/components";
-import { SliderButton } from "@/components/slider-button";
 import Link from "next/link";
 
 export default function Terms() {
@@ -1024,7 +1023,6 @@ export default function Terms() {
           </ul>
         </section>
       </div>
-      <SliderButton />
     </main>
   );
 }

@@ -1,5 +1,4 @@
 import { SectionHeader } from "@/components";
-import { SliderButton } from "@/components/slider-button";
 import Link from "next/link";
 
 export default function PrivacyPage() {
@@ -601,7 +600,6 @@ export default function PrivacyPage() {
           </p>
         </section>
       </div>
-      <SliderButton />
     </main>
   );
 }

@@ -1,5 +1,4 @@
 import { SectionHeader } from "@/components";
-import { SliderButton } from "@/components/slider-button";
 
 export default function AboutPage() {
   return (
@@ -53,7 +52,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      <SliderButton />
     </main>
   );
 }
