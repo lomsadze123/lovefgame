@@ -26,16 +26,16 @@
   --color-hero-mirror-edge: var(--hero-mirror-edge);
   --font-sans: var(--font-poppins);
   --animate-cursor-blink: cursor-blink 1.06s step-end infinite;
-}
 
-@keyframes cursor-blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  50.01%,
-  100% {
-    opacity: 0;
+  @keyframes cursor-blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.01%,
+    100% {
+      opacity: 0;
+    }
   }
 }
 
