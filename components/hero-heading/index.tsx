@@ -42,6 +42,7 @@ const SCALE_MAIN = 0.92;
 const SCALE_THIN = 0.954;
 
 const WHEEL_SENSITIVITY = 0.18;
+const TOUCH_SENSITIVITY = 0.45;
 
 const MIRROR_CONFIGS = [
   {
@@ -121,10 +122,49 @@ export function HeroHeading() {
       setScrollPercent(next);
     };
 
+    let lastTouchY: number | null = null;
+    const onTouchStart = (e: TouchEvent) => {
+      if (!inView || e.touches.length === 0) return;
+      lastTouchY = e.touches[0].clientY;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (!inView || lastTouchY === null || e.touches.length === 0) return;
+      const currentY = e.touches[0].clientY;
+      const deltaY = lastTouchY - currentY;
+      const prev = scrollPercentRef.current;
+      const goingUp = deltaY < 0;
+      const goingDown = deltaY > 0;
+      const escaping = (prev <= 0 && goingUp) || (prev >= 100 && goingDown);
+      if (escaping) {
+        lastTouchY = currentY;
+        return;
+      }
+
+      e.preventDefault();
+      const next = Math.max(
+        0,
+        Math.min(100, prev + deltaY * TOUCH_SENSITIVITY),
+      );
+      scrollPercentRef.current = next;
+      setScrollPercent(next);
+      lastTouchY = currentY;
+    };
+    const onTouchEnd = () => {
+      lastTouchY = null;
+    };
+
     window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
     return () => {
       observer.disconnect();
       window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
     };
   }, []);
 
