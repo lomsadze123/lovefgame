@@ -1,6 +1,6 @@
 "use client";
 
-import { useHideOnScrollDown } from "@/hooks/use-hide-on-scroll-down";
+import { useHideOnScrollDown } from "@/hooks";
 import Moon from "@/public/icons/moon.svg";
 import Sun from "@/public/icons/sun.svg";
 import clsx from "clsx";

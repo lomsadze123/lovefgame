@@ -1,9 +1,9 @@
-import { HeroHeading } from "@/components";
+import { HeroHeading, Logo } from "@/components";
 
 export default function Home() {
   return (
     <main className="flex-1">
-      {/* <Logo /> */}
+      <Logo />
       <HeroHeading />
     </main>
   );
