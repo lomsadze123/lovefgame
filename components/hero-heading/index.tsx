@@ -211,7 +211,7 @@ export function HeroHeading() {
     >
       <div
         ref={ref}
-        className="relative scale-25 sm:scale-50 lg:scale-75 xl:scale-100"
+        className="relative flex h-dvh scale-25 flex-col items-center justify-center sm:scale-50 lg:scale-75 xl:scale-100"
       >
         <svg
           width="1344"
