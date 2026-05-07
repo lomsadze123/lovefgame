@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
+import { useIntroActive } from "../../hooks";
 import {
   BOLD_D,
   G1_FILL_D,
@@ -14,6 +15,22 @@ import {
   G4_FILL_D,
   G4_STROKE_D,
 } from "./paths";
+
+const ENTER_TRANSITION = { duration: 1.6, ease: [0.22, 1, 0.36, 1] as const };
+const ENTER_PENDING = {
+  y: "25%",
+  clipPath: "inset(100% 0px 0px 0px)",
+  filter: "blur(18px) brightness(0.45)",
+  opacity: 0.35,
+  scale: 0.95,
+};
+const ENTER_REVEALED = {
+  y: 0,
+  clipPath: "inset(0px 0px 0px 0px)",
+  filter: "blur(0px) brightness(1)",
+  opacity: 1,
+  scale: 1,
+};
 
 const BOLD_CENTER_Y = 384;
 const GROUP_CENTER_TOP_MAIN = 291;
@@ -58,6 +75,7 @@ const MIRROR_CONFIGS = [
 ] as const;
 
 export function HeroHeading() {
+  const introActive = useIntroActive();
   const ref = useRef<HTMLDivElement>(null);
   const [scrollPercent, setScrollPercent] = useState(0);
   const scrollPercentRef = useRef(0);
@@ -145,115 +163,128 @@ export function HeroHeading() {
   ];
 
   return (
-    <div
-      ref={ref}
-      className="relative scale-25 sm:scale-50 lg:scale-75 xl:scale-100"
+    <motion.div
+      initial={ENTER_PENDING}
+      animate={introActive ? ENTER_PENDING : ENTER_REVEALED}
+      transition={ENTER_TRANSITION}
+      style={{ willChange: "transform, clip-path, opacity, filter" }}
     >
-      <svg
-        width="1344"
-        height="768"
-        viewBox="0 0 1344 768"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        ref={ref}
+        className="relative scale-25 sm:scale-50 lg:scale-75 xl:scale-100"
       >
-        <g clipPath="url(#clip0_2001_1227)">
-          {MIRROR_CONFIGS.map((cfg, i) => (
-            <motion.g
-              key={cfg.maskId}
-              style={{
-                y: groupAnims[i].y,
-                scale: groupAnims[i].scale,
-                opacity: opacityMirror,
-                transformBox: "fill-box",
-                transformOrigin: "center",
-              }}
-            >
-              <mask
-                id={cfg.maskId}
-                maskUnits="userSpaceOnUse"
-                x={cfg.region.x}
-                y={cfg.region.y}
-                width={cfg.region.width}
-                height={cfg.region.height}
-                fill="black"
+        <svg
+          width="1344"
+          height="768"
+          viewBox="0 0 1344 768"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#clip0_2001_1227)">
+            {MIRROR_CONFIGS.map((cfg, i) => (
+              <motion.g
+                key={cfg.maskId}
+                style={{
+                  y: groupAnims[i].y,
+                  scale: groupAnims[i].scale,
+                  opacity: opacityMirror,
+                  transformBox: "fill-box",
+                  transformOrigin: "center",
+                }}
               >
-                <rect
-                  fill="white"
+                <mask
+                  id={cfg.maskId}
+                  maskUnits="userSpaceOnUse"
                   x={cfg.region.x}
                   y={cfg.region.y}
                   width={cfg.region.width}
                   height={cfg.region.height}
+                  fill="black"
+                >
+                  <rect
+                    fill="white"
+                    x={cfg.region.x}
+                    y={cfg.region.y}
+                    width={cfg.region.width}
+                    height={cfg.region.height}
+                  />
+                  <path d={cfg.fillD} />
+                </mask>
+                <path d={cfg.fillD} style={{ fill: "var(--background)" }} />
+                <path
+                  d={cfg.strokeD}
+                  fill={`url(#${cfg.gradientId})`}
+                  mask={`url(#${cfg.maskId})`}
                 />
-                <path d={cfg.fillD} />
-              </mask>
-              <path d={cfg.fillD} style={{ fill: "var(--background)" }} />
-              <path
-                d={cfg.strokeD}
-                fill={`url(#${cfg.gradientId})`}
-                mask={`url(#${cfg.maskId})`}
+              </motion.g>
+            ))}
+            <path
+              d={BOLD_D}
+              style={{ fill: "var(--foreground)" }}
+              transform="translate(0 13)"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_2001_1227"
+              x1="672.115"
+              y1="243.867"
+              x2="672.115"
+              y2="317.636"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
+              <stop offset="1" style={{ stopColor: "var(--background)" }} />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_2001_1227"
+              x1="672.115"
+              y1="288.375"
+              x2="672.115"
+              y2="352.918"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop
+                style={{
+                  stopColor: "var(--hero-mirror-edge)",
+                  stopOpacity: 0.7,
+                }}
               />
-            </motion.g>
-          ))}
-          <path
-            d={BOLD_D}
-            style={{ fill: "var(--foreground)" }}
-            transform="translate(0 13)"
-          />
-        </g>
-        <defs>
-          <linearGradient
-            id="paint0_linear_2001_1227"
-            x1="672.115"
-            y1="243.867"
-            x2="672.115"
-            y2="317.636"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
-            <stop offset="1" style={{ stopColor: "var(--background)" }} />
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_2001_1227"
-            x1="672.115"
-            y1="288.375"
-            x2="672.115"
-            y2="352.918"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop
-              style={{ stopColor: "var(--hero-mirror-edge)", stopOpacity: 0.7 }}
-            />
-            <stop offset="1" style={{ stopColor: "var(--background)" }} />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_2001_1227"
-            x1="672.115"
-            y1="528.452"
-            x2="672.425"
-            y2="475.681"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
-            <stop offset="1" style={{ stopColor: "var(--background)" }} />
-          </linearGradient>
-          <linearGradient
-            id="paint3_linear_2001_1227"
-            x1="672.8"
-            y1="472.496"
-            x2="672.8"
-            y2="405.87"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop
-              style={{ stopColor: "var(--hero-mirror-edge)", stopOpacity: 0.7 }}
-            />
-            <stop offset="1" style={{ stopColor: "var(--background)" }} />
-          </linearGradient>
-          <clipPath id="clip0_2001_1227">
-            <rect width="1344" height="768" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
+              <stop offset="1" style={{ stopColor: "var(--background)" }} />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_2001_1227"
+              x1="672.115"
+              y1="528.452"
+              x2="672.425"
+              y2="475.681"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop style={{ stopColor: "var(--hero-mirror-edge)" }} />
+              <stop offset="1" style={{ stopColor: "var(--background)" }} />
+            </linearGradient>
+            <linearGradient
+              id="paint3_linear_2001_1227"
+              x1="672.8"
+              y1="472.496"
+              x2="672.8"
+              y2="405.87"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop
+                style={{
+                  stopColor: "var(--hero-mirror-edge)",
+                  stopOpacity: 0.7,
+                }}
+              />
+              <stop offset="1" style={{ stopColor: "var(--background)" }} />
+            </linearGradient>
+            <clipPath id="clip0_2001_1227">
+              <rect width="1344" height="768" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </motion.div>
   );
 }
