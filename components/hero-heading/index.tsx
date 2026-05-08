@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-import { useIntroActive } from "../../hooks";
+import { setHeroAtTop, useIntroActive } from "../../hooks";
 import {
   BOLD_D,
   G1_FILL_D,
@@ -120,6 +120,7 @@ export function HeroHeading() {
       );
       scrollPercentRef.current = next;
       setScrollPercent(next);
+      setHeroAtTop(next === 0);
     };
 
     let lastTouchY: number | null = null;
@@ -147,6 +148,7 @@ export function HeroHeading() {
       );
       scrollPercentRef.current = next;
       setScrollPercent(next);
+      setHeroAtTop(next === 0);
       lastTouchY = currentY;
     };
     const onTouchEnd = () => {

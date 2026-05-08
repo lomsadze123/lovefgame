@@ -6,6 +6,7 @@ import { createPortal } from "react-dom";
 import {
   armIntroDismissal,
   resetIntroDismissal,
+  useHeroAtTop,
   useIntroActive,
 } from "../hooks";
 
@@ -72,7 +73,13 @@ function Cursor({ visible, fading }: { visible: boolean; fading: boolean }) {
   );
 }
 
-function LogoMark({ typedCount }: { typedCount: number }) {
+function LogoMark({
+  typedCount,
+  showCursor = true,
+}: {
+  typedCount: number;
+  showCursor?: boolean;
+}) {
   const cursorFading = typedCount >= TOTAL_CHARS;
   return (
     <h1 className="inline-flex flex-col">
@@ -90,7 +97,7 @@ function LogoMark({ typedCount }: { typedCount: number }) {
         return (
           <span key={i} className={LINE_CLASS[i]}>
             {line.slice(0, typedInLine)}
-            <Cursor visible={cursorOnLine} fading={cursorFading} />
+            {showCursor && <Cursor visible={cursorOnLine} fading={cursorFading} />}
           </span>
         );
       })}
@@ -98,10 +105,31 @@ function LogoMark({ typedCount }: { typedCount: number }) {
   );
 }
 
+const HIDDEN_STATE = {
+  y: "-30%",
+  scale: 0.5,
+  opacity: 0,
+  clipPath: "inset(0px 0px 100% 0px)",
+} as const;
+
+const VISIBLE_STATE = {
+  y: 0,
+  scale: 1,
+  opacity: 1,
+  clipPath: "inset(0px 0px 0% 0px)",
+} as const;
+
+let logoDismissed = false;
+
 export function Logo() {
   const isClient = useIsClient();
   const introActive = useIntroActive();
+  const heroAtTop = useHeroAtTop();
   const [typedCount, setTypedCount] = useState(0);
+
+  useEffect(() => {
+    if (!introActive) logoDismissed = true;
+  }, [introActive]);
 
   useEffect(() => {
     let cancelled = false;
@@ -151,17 +179,15 @@ export function Logo() {
     };
   }, []);
 
+  const visible = introActive || heroAtTop;
+
   const overlay = (
     <AnimatePresence>
-      {introActive && (
+      {visible && (
         <motion.div
-          initial={false}
-          exit={{
-            y: "-30%",
-            scale: 0.5,
-            opacity: 0,
-            clipPath: "inset(0px 0px 100% 0px)",
-          }}
+          initial={logoDismissed ? HIDDEN_STATE : false}
+          animate={VISIBLE_STATE}
+          exit={HIDDEN_STATE}
           transition={TRANSITION}
           style={{
             background: "var(--background)",
@@ -169,8 +195,11 @@ export function Logo() {
           }}
           className="fixed inset-0 z-50 flex items-center justify-center"
         >
-          <ScrollLock />
-          <LogoMark typedCount={typedCount} />
+          {introActive && <ScrollLock />}
+          <LogoMark
+            typedCount={introActive ? typedCount : TOTAL_CHARS}
+            showCursor={introActive}
+          />
         </motion.div>
       )}
     </AnimatePresence>
