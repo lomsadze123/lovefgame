@@ -1,5 +1,4 @@
 import { SectionHeader } from "@/components";
-import Link from "next/link";
 
 export default function Terms() {
   return (
@@ -260,12 +259,9 @@ export default function Terms() {
               Services access keys/codes (all of which are our property). If you
               are concerned that any of this has happened to you, contact
               customer support at{" "}
-              <Link
-                href="mailto:support@lovefromgames.com"
-                className="underline"
-              >
+              <a href="mailto:support@lovefromgames.com" className="underline">
                 support@lovefromgames.com
-              </Link>
+              </a>
               .
             </li>
             <li>
@@ -344,12 +340,9 @@ export default function Terms() {
               other communication systems for any reason. Please report any
               behavior you think is in breach of this rule by sending a message
               to{" "}
-              <Link
-                href="mailto:support@lovefromgames.com"
-                className="underline"
-              >
+              <a href="mailto:support@lovefromgames.com" className="underline">
                 support@lovefromgames.com
-              </Link>
+              </a>
               .
             </li>
           </ul>
@@ -837,12 +830,12 @@ export default function Terms() {
               Union, you may be entitled to submit a complaint through the
               Online Dispute Resolution Platform operated by the European
               Commission, details of which can be found at{" "}
-              <Link
+              <a
                 href="https://consumer-redress.ec.europa.eu/site-relocation_en?event=main.home.chooseLanguage"
                 className="underline"
               >
                 https://ec.europa.eu/
-              </Link>
+              </a>
             </li>
             <li>
               If we can&apos;t resolve a dispute with you informally, then this
@@ -861,12 +854,9 @@ export default function Terms() {
               You and we have the legal right to commence legal claims against
               each other if we consider it necessary. If you bring a claim
               against LoveFrom Games, you should address it to
-              <Link
-                href="mailto:support@lovefromgames.com"
-                className="underline"
-              >
+              <a href="mailto:support@lovefromgames.com" className="underline">
                 support@lovefromgames.com
-              </Link>
+              </a>
               .
             </li>
             <li>
