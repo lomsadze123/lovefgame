@@ -45,14 +45,14 @@ export function Footer() {
             text="Download on the"
             title="App Store"
             iconClassName="w-[1.365rem]"
-            href="#"
+            href="https://apps.apple.com/us/app/paper-toss/id6451116448"
           />
           <AppStoreButtons
             logo={PlayStoreLogo}
             text="Get it on"
             title="PLay Store"
             iconClassName="w-[1.65rem]"
-            href="#"
+            href="https://play.google.com/store/apps/dev?id=7282945627507088067"
           />
         </div>
       </div>
