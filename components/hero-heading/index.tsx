@@ -80,6 +80,7 @@ export function HeroHeading() {
   const ref = useRef<HTMLDivElement>(null);
   const [scrollPercent, setScrollPercent] = useState(0);
   const scrollPercentRef = useRef(0);
+  const entryDoneRef = useRef(false);
 
   const progressMV = useMotionValue(0);
   const progress = useSpring(progressMV, {
@@ -96,7 +97,7 @@ export function HeroHeading() {
     const el = ref.current;
     if (!el) return;
 
-    let inView = false;
+    let inView = true;
     const observer = new IntersectionObserver(
       ([entry]) => {
         inView = entry.isIntersecting;
@@ -106,7 +107,7 @@ export function HeroHeading() {
     observer.observe(el);
 
     const onWheel = (e: WheelEvent) => {
-      if (!inView) return;
+      if (!inView || !entryDoneRef.current) return;
       const prev = scrollPercentRef.current;
       const goingUp = e.deltaY < 0;
       const goingDown = e.deltaY > 0;
@@ -125,11 +126,11 @@ export function HeroHeading() {
 
     let lastTouchY: number | null = null;
     const onTouchStart = (e: TouchEvent) => {
-      if (!inView || e.touches.length === 0) return;
+      if (!inView || !entryDoneRef.current || e.touches.length === 0) return;
       lastTouchY = e.touches[0].clientY;
     };
     const onTouchMove = (e: TouchEvent) => {
-      if (!inView || lastTouchY === null || e.touches.length === 0) return;
+      if (!inView || !entryDoneRef.current || lastTouchY === null || e.touches.length === 0) return;
       const currentY = e.touches[0].clientY;
       const deltaY = lastTouchY - currentY;
       const prev = scrollPercentRef.current;
@@ -210,6 +211,9 @@ export function HeroHeading() {
       animate={introActive ? ENTER_PENDING : ENTER_REVEALED}
       transition={ENTER_TRANSITION}
       style={{ willChange: "transform, clip-path, opacity, filter" }}
+      onAnimationComplete={() => {
+        if (!introActive) entryDoneRef.current = true;
+      }}
     >
       <div
         ref={ref}
