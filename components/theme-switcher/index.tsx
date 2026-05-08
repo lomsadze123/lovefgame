@@ -50,9 +50,9 @@ export function ThemeSwitcher() {
       onClick={handleToggle}
       className={clsx(
         "fixed right-0 bottom-0 left-0 mx-auto mb-12.5 flex h-10 w-28.25 cursor-pointer items-center justify-center rounded-3xl bg-foreground lg:top-0 lg:right-0 lg:bottom-auto lg:left-auto lg:mt-12 lg:mr-20 lg:mb-0 lg:w-13 xl:mr-28 2xl:mt-18.5",
-        "transition-transform duration-500 ease-out will-change-transform motion-reduce:transition-none",
+        "transition-all duration-500 ease-out will-change-transform motion-reduce:transition-none",
         hidden
-          ? "translate-y-[calc(100%+3.5rem)] sm:translate-y-0"
+          ? "translate-y-[calc(100%+3.5rem)] opacity-0 sm:translate-y-0 sm:opacity-0"
           : "translate-y-0",
       )}
     >
