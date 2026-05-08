@@ -25,7 +25,9 @@ export function useHideOnScrollDown({
         if (diff > 0 && y > showAfter) {
           setHidden(true);
         } else if (diff < 0) {
-          setHidden(false);
+          const atBottom =
+            window.innerHeight + y >= document.documentElement.scrollHeight - 50;
+          if (!atBottom) setHidden(false);
         }
         lastY = y;
       }

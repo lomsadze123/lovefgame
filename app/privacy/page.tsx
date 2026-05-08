@@ -34,7 +34,7 @@ export default function PrivacyPage() {
           <p>
             If you have any questions about how we use your personal data or if
             you wish to exercise your rights, please get in touch:{" "}
-            <a className="underline" href="#">
+            <a className="underline" href="mailto:privacy@lovefromgames.com">
               privacy@lovefromgames.com
             </a>
           </p>
@@ -572,9 +572,9 @@ export default function PrivacyPage() {
             who uses our Services, please contact us at
           </p>
           <p>
-            <Link className="underline" href="mailto:privacy@lovefromgames.com">
+            <a className="underline" href="mailto:privacy@lovefromgames.com">
               privacy@lovefromgames.com
-            </Link>
+            </a>
             , if you have any questions or comments. Upon your request, we will
             delete your child&apos;s personal information if we are able to
             identify your child unless you provide us with your verifiable
@@ -589,9 +589,9 @@ export default function PrivacyPage() {
           <p>Name of the Data controller:</p>
           <p>LoveFrom Games</p>
           <p>Georgia</p>
-          <Link className="underline" href="mailto:privacy@lovefromgames.com">
+          <a className="underline" href="mailto:privacy@lovefromgames.com">
             privacy@lovefromgames.com
-          </Link>
+          </a>
 
           <p className="text-center font-medium">Complaints</p>
           <p>

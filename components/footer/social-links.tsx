@@ -1,13 +1,41 @@
 import Image from "next/image";
 
 const socials = [
-  { name: "YouTube", icon: "/icons/youtube.svg", href: "#" },
-  { name: "Instagram", icon: "/icons/instagram.svg", href: "#" },
-  { name: "Facebook", icon: "/icons/facebook.svg", href: "#" },
-  { name: "TikTok", icon: "/icons/tiktok.svg", href: "#" },
-  { name: "Telegram", icon: "/icons/telegram.svg", href: "#" },
-  { name: "X", icon: "/icons/x.svg", href: "#" },
-  { name: "Threads", icon: "/icons/hashtag.svg", href: "#" },
+  {
+    name: "YouTube",
+    icon: "/icons/youtube.svg",
+    href: "https://www.youtube.com/channel/UC2kaS-NXiUolJBkF8NqK0OQ",
+  },
+  {
+    name: "Instagram",
+    icon: "/icons/instagram.svg",
+    href: "https://www.instagram.com/LoveFromgames/",
+  },
+  {
+    name: "Facebook",
+    icon: "/icons/facebook.svg",
+    href: "https://www.facebook.com/LoveFromGames/",
+  },
+  {
+    name: "TikTok",
+    icon: "/icons/tiktok.svg",
+    href: "https://www.tiktok.com/@lovefromgames",
+  },
+  {
+    name: "Telegram",
+    icon: "/icons/telegram.svg",
+    href: "https://t.me/LoveFromGames",
+  },
+  {
+    name: "X",
+    icon: "/icons/x.svg",
+    href: "https://x.com/LoveFromgames",
+  },
+  {
+    name: "Threads",
+    icon: "/icons/hashtag.svg",
+    href: "https://www.threads.com/@LoveFromgames",
+  },
 ];
 
 export function SocialLinks() {

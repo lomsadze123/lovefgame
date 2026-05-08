@@ -36,6 +36,28 @@ function useArmed() {
   );
 }
 
+const heroAtTopListeners = new Set<() => void>();
+let heroAtTop = false;
+
+export function setHeroAtTop(value: boolean) {
+  if (heroAtTop === value) return;
+  heroAtTop = value;
+  for (const l of heroAtTopListeners) l();
+}
+
+export function useHeroAtTop() {
+  return useSyncExternalStore(
+    (l) => {
+      heroAtTopListeners.add(l);
+      return () => {
+        heroAtTopListeners.delete(l);
+      };
+    },
+    () => heroAtTop,
+    () => false,
+  );
+}
+
 export function useIntroActive() {
   const [active, setActive] = useState(true);
   const isArmed = useArmed();
