@@ -107,7 +107,11 @@ export function HeroHeading() {
     observer.observe(el);
 
     const onWheel = (e: WheelEvent) => {
-      if (!inView || !entryDoneRef.current) return;
+      if (!inView) return;
+      if (!entryDoneRef.current) {
+        e.preventDefault();
+        return;
+      }
       const prev = scrollPercentRef.current;
       const goingUp = e.deltaY < 0;
       const goingDown = e.deltaY > 0;
@@ -130,7 +134,11 @@ export function HeroHeading() {
       lastTouchY = e.touches[0].clientY;
     };
     const onTouchMove = (e: TouchEvent) => {
-      if (!inView || !entryDoneRef.current || lastTouchY === null || e.touches.length === 0) return;
+      if (!inView || lastTouchY === null || e.touches.length === 0) return;
+      if (!entryDoneRef.current) {
+        e.preventDefault();
+        return;
+      }
       const currentY = e.touches[0].clientY;
       const deltaY = lastTouchY - currentY;
       const prev = scrollPercentRef.current;

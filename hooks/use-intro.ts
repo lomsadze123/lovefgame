@@ -63,6 +63,17 @@ export function useIntroActive() {
   const isArmed = useArmed();
 
   useEffect(() => {
+    if (!active) return;
+    const block = (e: Event) => e.preventDefault();
+    window.addEventListener("wheel", block, { passive: false });
+    window.addEventListener("touchmove", block, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", block);
+      window.removeEventListener("touchmove", block);
+    };
+  }, [active]);
+
+  useEffect(() => {
     if (!active || !isArmed) return;
     const dismiss = () => setActive(false);
     const opts = { once: true, passive: true } as const;
