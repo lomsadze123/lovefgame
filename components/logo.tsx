@@ -36,6 +36,7 @@ const CURSOR_BASE =
 
 function ScrollLock() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     const html = document.documentElement;
     const body = document.body;
     const prevHtml = html.style.overflow;

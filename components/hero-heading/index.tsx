@@ -125,7 +125,8 @@ export function HeroHeading() {
       );
       scrollPercentRef.current = next;
       setScrollPercent(next);
-      setHeroAtTop(next === 0);
+      if (next === 0) setHeroAtTop(true);
+      else if (next > 2) setHeroAtTop(false);
     };
 
     let lastTouchY: number | null = null;
@@ -157,7 +158,8 @@ export function HeroHeading() {
       );
       scrollPercentRef.current = next;
       setScrollPercent(next);
-      setHeroAtTop(next === 0);
+      if (next === 0) setHeroAtTop(true);
+      else if (next > 2) setHeroAtTop(false);
       lastTouchY = currentY;
     };
     const onTouchEnd = () => {
