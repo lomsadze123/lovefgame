@@ -10,7 +10,7 @@ export default function Terms() {
         variant="page-title"
       />
 
-      <div className="mx-auto mt-12 flex max-w-340 flex-col gap-10 px-7 font-light">
+      <div className="mx-auto mt-12 flex max-w-330 flex-col gap-10 px-7 font-light 2xl:px-0 ">
         <section className="flex flex-col gap-5">
           <SectionHeader
             title="A quick summary"

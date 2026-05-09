@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components";
 
 export default function AboutPage() {
   return (
-    <main className="mt-9 max-w-330 px-7 md:mt-15 lg:mb-21">
+    <main className="mt-9 max-w-330 px-7 md:mt-15 lg:mb-21 2xl:px-0">
       <section className="text-center">
         <h1 className="text-[2rem] font-bold">ABOUT US</h1>
         <p className="my-[1.9rem] font-light md:mx-16 md:text-xl lg:my-8.5">

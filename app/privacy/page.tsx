@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         variant="page-title"
       />
 
-      <div className="mx-auto mt-12 flex max-w-340 flex-col gap-10 px-7">
+      <div className="mx-auto mt-12 flex max-w-330 flex-col gap-10 px-7 2xl:px-0">
         <section className="flex flex-col gap-4 font-light">
           <p>
             This Privacy Policy tells you what you need to know about the
