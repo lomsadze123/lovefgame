@@ -35,7 +35,8 @@ export function Footer() {
             <li className={hoverUnderline}>
               <Link href="/terms">Terms of service</Link>
             </li>
-            <li className={hoverUnderline}>Support</li>
+            <li className={hoverUnderline}><a href="mailto:support@lovefromgames.com">Support</a>
+            </li>
           </ul>
         </nav>
 
@@ -50,7 +51,7 @@ export function Footer() {
           <AppStoreButtons
             logo={PlayStoreLogo}
             text="Get it on"
-            title="PLay Store"
+            title="Play Store"
             iconClassName="w-[1.65rem]"
             href="https://play.google.com/store/apps/dev?id=7282945627507088067"
           />
