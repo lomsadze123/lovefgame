@@ -46,8 +46,8 @@ export function PageTransition({ children }: { children: ReactNode }) {
         initial={
           animateEnter
             ? {
-                x: "-25%",
-                clipPath: "inset(0px 100% 0px 0px)",
+                x: "25%",
+                clipPath: "inset(0px 0px 0px 100%)",
                 filter: "blur(18px) brightness(0.45)",
                 opacity: 0.35,
                 scale: 0.95,
@@ -101,10 +101,10 @@ function ExitingPage({
         clipPath: "inset(0px 0px 0px 0px)",
       }}
       animate={{
-        x: "30%",
+        x: "-30%",
         scale: 0.5,
         opacity: 0,
-        clipPath: "inset(0px 0px 0px 100%)",
+        clipPath: "inset(0px 100% 0px 0px)",
       }}
       transition={TRANSITION}
       onAnimationComplete={onDone}
@@ -112,7 +112,7 @@ function ExitingPage({
         position: "absolute",
         inset: 0,
         zIndex: 2,
-        transformOrigin: "100% 50%",
+        transformOrigin: "0% 50%",
         background: "var(--background)",
         willChange: "transform, clip-path, opacity",
         pointerEvents: "none",
