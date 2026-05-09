@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-type ExitingFrame = { id: number; node: HTMLElement };
+type ExitingFrame = { id: number; node: HTMLElement; height: number };
 
 const TRANSITION = { duration: 1.6, ease: [0.22, 1, 0.36, 1] as const };
 
@@ -22,12 +22,13 @@ export function PageTransition({ children }: { children: ReactNode }) {
             "[data-live-page] main",
           ) as HTMLElement | null)
         : null;
+    const height = Math.min(main?.offsetHeight ?? 0, window.innerHeight);
     const node = main ? (main.cloneNode(true) as HTMLElement) : null;
     setLastPath(pathname);
     setEnterId((id) => id + 1);
     setAnimateEnter(true);
     if (node) {
-      setExiting({ id: enterId + 1, node });
+      setExiting({ id: enterId + 1, node, height });
     }
   }
 
@@ -37,6 +38,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
         <ExitingPage
           key={exiting.id}
           node={exiting.node}
+          height={exiting.height}
           onDone={() => setExiting(null)}
         />
       )}
@@ -78,9 +80,11 @@ export function PageTransition({ children }: { children: ReactNode }) {
 
 function ExitingPage({
   node,
+  height,
   onDone,
 }: {
   node: HTMLElement;
+  height: number;
   onDone: () => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -110,7 +114,10 @@ function ExitingPage({
       onAnimationComplete={onDone}
       style={{
         position: "absolute",
-        inset: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        height: height || "auto",
         zIndex: 2,
         transformOrigin: "0% 50%",
         background: "var(--background)",
