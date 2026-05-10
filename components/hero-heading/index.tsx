@@ -181,6 +181,17 @@ export function HeroHeading() {
     };
   }, []);
 
+  useEffect(() => {
+    document.documentElement.style.overflow =
+      scrollPercent >= 100 ? "" : "hidden";
+  }, [scrollPercent]);
+
+  useEffect(() => {
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
+  }, []);
+
   const yTopMain = useTransform(
     progress,
     [0, 1],

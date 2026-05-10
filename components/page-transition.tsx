@@ -52,7 +52,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
                 clipPath: "inset(0px 0px 0px 100%)",
                 filter: "blur(18px) brightness(0.45)",
                 opacity: 0.35,
-                scale: 0.95,
+                scaleX: 0.95,
               }
             : false
         }
@@ -61,7 +61,7 @@ export function PageTransition({ children }: { children: ReactNode }) {
           clipPath: "inset(0px 0px 0px 0px)",
           filter: "blur(0px) brightness(1)",
           opacity: 1,
-          scale: 1,
+          scaleX: 1,
         }}
         transition={TRANSITION}
         style={{
@@ -100,13 +100,13 @@ function ExitingPage({
       ref={containerRef}
       initial={{
         opacity: 1,
-        scale: 1,
+        scaleX: 1,
         x: 0,
         clipPath: "inset(0px 0px 0px 0px)",
       }}
       animate={{
         x: "-30%",
-        scale: 0.5,
+        scaleX: 0.5,
         opacity: 0,
         clipPath: "inset(0px 100% 0px 0px)",
       }}

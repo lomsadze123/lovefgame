@@ -12,8 +12,8 @@ export function SliderButton() {
 
   return (
     <div className="fixed top-0 left-0 z-10 flex h-dvh flex-col items-center justify-center">
-      <button className="group ml-1 2xl:ml-11 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 transition-colors duration-500 ease-in-out xl:flex xl:hover:bg-foreground">
-        <Link className="p-4.5 pr-5" href="/">
+      <button className="group ml-1 hidden h-13 w-13 cursor-pointer items-center justify-center rounded-full border-2 transition-colors duration-500 ease-in-out xl:flex xl:hover:bg-foreground 2xl:ml-11">
+        <Link className="p-4 pr-4.5" href="/">
           <Image
             src={SliderArrow}
             alt="Slider Arrow"
