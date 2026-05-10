@@ -11,18 +11,10 @@ export function Footer() {
   return (
     <footer className="mt-11 flex w-full flex-col items-center border-t-[0.625rem] pb-[2.9rem] lg:mt-0 lg:border-t-[#FFFFFF] lg:bg-black lg:pb-16.5 lg:text-white">
       <div className="mt-[2.89rem] flex flex-col gap-[1.88rem] border-b px-2 pb-[1.88rem] sm:w-[90%] lg:flex-row lg:items-center lg:justify-between lg:gap-7">
-        <div>
-          <Link
-            href="/"
-            className="flex flex-col lg:mb-10 [&_span]:leading-none"
-          >
-            <span className="text-3xl font-semibold">LoveFrom</span>
-            <span className="text-lg font-light">Games</span>
-          </Link>
-          <a className="hidden lg:inline" href="mailto:support@lfg.com">
-            support@lfg.com
-          </a>
-        </div>
+        <Link href="/" className="flex flex-col [&_span]:leading-none">
+          <span className="text-3xl font-semibold">LoveFrom</span>
+          <span className="text-lg font-light">Games</span>
+        </Link>
 
         <nav>
           <ul className="flex flex-col gap-5 lg:flex-row xl:gap-18">
@@ -35,7 +27,8 @@ export function Footer() {
             <li className={hoverUnderline}>
               <Link href="/terms">Terms of service</Link>
             </li>
-            <li className={hoverUnderline}><a href="mailto:support@lovefromgames.com">Support</a>
+            <li className={hoverUnderline}>
+              <a href="mailto:support@lovefromgames.com">Support</a>
             </li>
           </ul>
         </nav>
